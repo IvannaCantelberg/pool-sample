@@ -23,7 +23,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "demo",
-            "baseHref": "/pool-sample/demo/",
+            "baseHref": "/pool-sample/",
             "outputHashing": "all",
 
             "index": "src/index.html",
