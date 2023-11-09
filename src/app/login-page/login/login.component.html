@@ -1,0 +1,31 @@
+<section class="flex flex-col justify-center overflow-hidden min-h-full ">
+
+  <div class="card">
+    <h2 class="font-semibold text-xl">WELCOME TO NOMI</h2>
+    <p class="mt-2">Log in to your account</p>
+
+    <form [formGroup]="form" class="login-form">
+      <div class="form-fields mb-3">
+        <label for="email" class="input-field">
+          <input type="email" name="email" id="email" formControlName="email" placeholder="Email Address"
+            autocomplete="off">
+        </label>
+
+        <label for="pass" class="input-field">
+          <input type="password" name="pass" id="pass" formControlName="password" placeholder="Password"
+            autocomplete="off">
+        </label>
+      </div>
+
+      <label for="rememberMe" class="remember-me">
+        <input type="checkbox" name="rememberMe" id="rememberMe" formControlName="rememberMe">
+        <span class="ml-2">Remember me</span>
+      </label>
+      <a type="_self" target="_self" class="forgot-pass">Forgot your password?</a>
+
+      <button type="submit" class="btn-login btn-primary block w-2/3 mt-6 mb-3 justify-self-center">Log in</button>
+    </form>
+  </div>
+
+
+</section>

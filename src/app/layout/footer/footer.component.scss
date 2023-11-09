@@ -1,0 +1,36 @@
+:host {
+  display: grid;
+  grid-template-areas:
+    'logo info media';
+  grid-template-rows: min-content auto min-content;
+
+  @media (max-width: 1024px) {
+    grid-template-areas:
+      'media media media'
+      'info info info';
+
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+.brand-logo {
+  grid-area: logo;
+  justify-self: center;
+}
+
+.info {
+  grid-area: info;
+  justify-self: center;
+
+  @apply text-center text-[10px] sm:text-xs text-sky-500
+}
+
+.media {
+  grid-area: media;
+  justify-self: center;
+  display: flex;
+  gap: 10px;
+}

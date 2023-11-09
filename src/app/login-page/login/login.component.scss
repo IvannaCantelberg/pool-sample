@@ -1,0 +1,38 @@
+:host{
+  .login-form {
+    display: grid;
+    grid-template-areas:
+      'fields fields'
+      'remember forgot'
+      'login login' ;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-fields { grid-area: fields;}
+  .remember-me {
+    grid-area: remember;
+    justify-self: flex-start;
+  }
+  .forgot-pass {
+    grid-area: forgot;
+    justify-self: flex-end;
+  }
+  .btn-login { grid-area: login;}
+
+  @media screen and (max-width: 767px) {
+    .login-form {
+        display: grid;
+        grid-template-areas:
+          'fields fields'
+          'remember remember'
+          'login login'
+          'forgot forgot' ;
+    }
+
+    .forgot-pass {
+      justify-self: center;
+
+    }
+  }
+
+}

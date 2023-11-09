@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 m-0;
+}
+
+@layer base {
+
+
+  .layout-space {
+    @apply py-2 px-3 sm:py-3 sm:px-5 lg:py-7 lg:px-20;
+  }
+
+  .layout-wrapper {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer" ;
+    grid-template-rows: min-content auto min-content;
+
+    @apply min-h-screen;
+  }
+  .main-header {
+    grid-area: header;
+    @extend .layout-space;
+    @apply backdrop-blur-sm bg-white/50;
+    @apply relative flex flex-row justify-center shadow-r-sm ;
+  }
+
+  .navigation {
+    @apply flex flex-row justify-between justify-items-center items-center;
+
+  }
+
+  .main-container {
+    grid-area: main;
+    @extend .layout-space;
+  }
+
+  .main-footer {
+    grid-area: footer;
+
+    @extend .layout-space;
+    @apply backdrop-blur-sm bg-white/50;
+    @apply relative flex flex-row justify-between;
+  }
+}
+
+@layer components {
+  .bg-image {
+      background-image: url('/assets/bg.png');
+      @apply absolute inset-0 bg-cover bg-center;
+    }
+
+  .card {
+    @apply backdrop-blur-sm bg-white/50;
+    @apply  py-8 px-8 sm:px-16 md:py-16 md:px-32 min-w-fit mx-auto  rounded-2xl sm:shadow-2xl sm:drop-shadow-2xl text-center;
+  }
+
+  .login-form {
+    @apply md:w-[430px] lg:w-[530];
+  }
+
+  .input-field {
+    @apply  mt-6 block shadow-r-sm rounded-md focus:outline-none focus-visible:ring;
+    @apply backdrop-blur-sm ;
+    input {
+        @apply w-full font-normal  bg-transparent rounded-md py-4 px-8 sm:text-base sm:leading-6 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-slate-50  focus:outline-none focus-visible:right-0;
+      }
+  }
+
+  .btn-primary {
+    @apply py-2 px-4 bg-sky-400 inline-block text-white rounded-md shadow-md hover:bg-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:ring-opacity-75;
+  }
+
+  .btn-decorated {
+    @apply py-2 px-4 bg-gray-900 inline-block text-white rounded-full shadow-md hover:bg-gray-950 focus:outline-none focus:ring-1 focus:ring-slate-950 focus:ring-opacity-75;
+  }
+
+}

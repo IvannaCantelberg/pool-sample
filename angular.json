@@ -7,7 +7,12 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
         }
       },
       "root": "",
@@ -17,7 +22,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/swimming-pool",
+            "outputPath": ".././sw-pool-demo",
+            "baseHref": "/sw-pool-demo/",
+
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -27,6 +34,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/assets/icons",
               "src/assets"
             ],
             "styles": [
