@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'login',
+    path: '/',
     title: 'Log in',
     data: { imageBg: false, title: 'text' },
     loadComponent: () => import('./login-page/login/login.component').then(m => m.LoginComponent)
