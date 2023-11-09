@@ -6,6 +6,7 @@ export const routes: Routes = [
     path: 'login',
     title: 'Log in',
     data: { imageBg: false, title: 'text' },
+
     loadComponent: () => import('./login-page/login/login.component').then(m => m.LoginComponent)
   },
   {
@@ -14,6 +15,7 @@ export const routes: Routes = [
     data: { imageBg: true, title: 'text  2' },
     loadComponent: () => import('./login-page/sign-in/sign-in.component').then(m => m.SignInComponent)
   },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: '**',
     redirectTo: 'login',
